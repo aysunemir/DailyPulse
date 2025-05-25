@@ -1,30 +1,41 @@
 package com.petros.efthymiou.dailypulse.articles
 
 import com.petros.efthymiou.dailypulse.BaseViewModel
-import kotlinx.coroutines.delay
+import io.ktor.client.HttpClient
+import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.serialization.json.Json
 
 class ArticlesViewModel : BaseViewModel() {
+
+    private val articlesUseCase: ArticlesUseCase
 
     private val _articleState: MutableStateFlow<ArticleState> =
         MutableStateFlow(ArticleState(loading = true))
     val articleState: StateFlow<ArticleState> get() = _articleState
 
     init {
+        val httpClient = HttpClient {
+            install(ContentNegotiation) {
+                json(Json {
+                    prettyPrint = true
+                    isLenient = true
+                    ignoreUnknownKeys = true
+                })
+            }
+        }
+        val articlesService = ArticlesService(httpClient)
+        articlesUseCase = ArticlesUseCase(articlesService)
+
         getArticles()
     }
 
     private fun getArticles() {
         scope.launch {
-            delay(1500)
-
-            _articleState.emit(ArticleState(error = "Something went wrong"))
-
-            delay(1500)
-
-            val fetchedArticles = fetchArticles()
+            val fetchedArticles = articlesUseCase.fetchArticles()
 
             _articleState.emit(ArticleState(articles = fetchedArticles))
         }
