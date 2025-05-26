@@ -1,5 +1,8 @@
-package com.petros.efthymiou.dailypulse.articles
+package com.petros.efthymiou.dailypulse.articles.application
 
+import com.petros.efthymiou.dailypulse.articles.data.ArticlesRepository
+import com.petros.efthymiou.dailypulse.articles.application.Article
+import com.petros.efthymiou.dailypulse.articles.data.ArticleRaw
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
@@ -27,9 +30,9 @@ class ArticlesUseCase(val repo: ArticlesRepository) {
         }
 
     private fun getDaysAgoString(date: String): String {
-        val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
+        val today = Clock.System.todayIn(TimeZone.Companion.currentSystemDefault())
         val days = today.daysUntil(
-            Instant.parse(date).toLocalDateTime(TimeZone.currentSystemDefault()).date
+            Instant.Companion.parse(date).toLocalDateTime(TimeZone.Companion.currentSystemDefault()).date
         )
 
         val result = when {
