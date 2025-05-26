@@ -1,5 +1,7 @@
 package com.petros.efthymiou.dailypulse.articles.di
 
+import com.petros.efthymiou.dailypulse.articles.ArticlesDataSource
+import com.petros.efthymiou.dailypulse.articles.ArticlesRepository
 import com.petros.efthymiou.dailypulse.articles.ArticlesService
 import com.petros.efthymiou.dailypulse.articles.ArticlesUseCase
 import com.petros.efthymiou.dailypulse.articles.ArticlesViewModel
@@ -9,5 +11,6 @@ val articlesModule = module {
     single { ArticlesService(get()) }
     single { ArticlesUseCase(get()) }
     single { ArticlesViewModel(get()) }
-
+    single { ArticlesDataSource(get()) }
+    single { ArticlesRepository(get(), get()) }
 }
