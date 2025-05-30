@@ -14,6 +14,7 @@
 		A526F6242DDFC8480031F0BC /* AboutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A526F6232DDFC8480031F0BC /* AboutListView.swift */; };
 		A568930F2DDFCCB600FA6778 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568930E2DDFCCB600FA6778 /* AboutScreen.swift */; };
 		A56893122DE3756F00FA6778 /* ArticlesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56893112DE3756F00FA6778 /* ArticlesScreen.swift */; };
+		A56893142DE5135F00FA6778 /* SourcesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56893132DE5135F00FA6778 /* SourcesScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		A526F6232DDFC8480031F0BC /* AboutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutListView.swift; sourceTree = "<group>"; };
 		A568930E2DDFCCB600FA6778 /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		A56893112DE3756F00FA6778 /* ArticlesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesScreen.swift; sourceTree = "<group>"; };
+		A56893132DE5135F00FA6778 /* SourcesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A568930E2DDFCCB600FA6778 /* AboutScreen.swift */,
 				A526F6232DDFC8480031F0BC /* AboutListView.swift */,
 				A56893112DE3756F00FA6778 /* ArticlesScreen.swift */,
+				A56893132DE5135F00FA6778 /* SourcesScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				A568930F2DDFCCB600FA6778 /* AboutScreen.swift in Sources */,
+				A56893142DE5135F00FA6778 /* SourcesScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
